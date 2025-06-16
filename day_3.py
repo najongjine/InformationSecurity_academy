@@ -91,3 +91,5 @@ malloc 계산 필요 없음
 int [] a={1,2,3}
 int size= malloc(a/10%99)
 """
+
+
