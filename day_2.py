@@ -45,7 +45,6 @@ x=10
 # x 라는 변수가 예전에 등장 했고, 또 등장 했으니, 이번에는
 # x 라는 박스의 내용물을 바꾼거에요
 x=2
-
 """
 코딩 하다가 밑에 빨간줄 같은게 생기면, 문법 에러가 있다는 뜻입니다
 Statements must be separated by newlines or semicolons
@@ -63,6 +62,8 @@ my car = "밴츠"
 2. 예약어 금지
 def, int, string, bool
 요렇게 파이썬 만든 사람이 이미 만든 변수?는 변수로 쓸수 없어요
+string="문자" X
+mystring="문자" O
 
 3. 특수기호 금지
 특수 기호들은 산술연산 용도로 쓰임.
@@ -85,7 +86,7 @@ name 이라는 변수를 ""(빈 문자열로 값을 바꿔보기)
 """
 x=10
 
-name=" ";
+name="박종진";
 print(f"name : {name}")
 name = ""
 print(f"name : {name}")

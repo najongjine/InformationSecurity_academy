@@ -93,3 +93,7 @@ int size= malloc(a/10%99)
 """
 
 
+"""
+https://wildojisan.tistory.com/12
+-자료형
+"""
