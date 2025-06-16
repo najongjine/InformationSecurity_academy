@@ -253,9 +253,17 @@ person1={"이름":"뭐뭐1","학번":"11121"}
 person1={"이름":"뭐뭐1","학번":"11121"}
 print(f"person1:{person1}")
 
-coupang_item1={"name":"컴퓨터","price":"233423원","제조사":"삼성"}
+coupang_item1={"name":"컴퓨터","price":"233423원"
+               ,"제조사":"삼성"}
 coupang_item2={"name":"옥수수","price":"2334원","제조사":"농장"}
 coupang_item3={"name":"샴푸","price":"1334원","제조사":"화장품회사"}
 
+#               0               1            2
 coupang_list=[coupang_item1,coupang_item2,coupang_item3]
+
+"""
+coupang_list 1번째 인덱스의 제품 이름과 제조사 정보를 printf 로
+출력해 보세요
+"""
+print(f"coupang_list[1]: {coupang_list[1]['name']},{coupang_list[1]['제조사']}")
 
