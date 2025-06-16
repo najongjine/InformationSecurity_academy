@@ -138,7 +138,80 @@ a= (10,10,1)
 2. "멍멍이" 라는 str1 이라는 변수를 선언하세요
 3. 기본값이 False인 boolvar 이라는 변수를 선언하세요
 """
+num1=99
+num1="99"
+str1="멍멍이"
+boolvar=False
+boolvar="False"
+
+num2=9
+# print(f"type(num2):{type(num2)}")
+num3="1"
+# print(f"type(num3):{type(num3)}")
+"""
+TypeError(에러났다): 
+unsupported(못함) operand(연산자) type(s) for +: 
+'int' and 'str'   
+이 뜻은 정수(int) 랑 문자열(str) 은 더하기 연산을 할수 없습니다
+"""
+#print(f"num2+num3={num2+num3}")
+
+"""
+컴퓨터에선 특수 문자 기호들이, 상황에 따라서
+다른 연산을 하기도 합니다
+예를들어서 문자열 + 문자열은 이어 붙이기라는 뜻입니다
+"""
+num2="9"
+num3="1"
+# print(f"num2+num3={num2+num3}")
+# "91"
+
+"""
+파이썬 기본 자료형 중에서 리스트 라는 놈이 있다.
+얘는 수학의 백터(선형대수) 가 아니다.
+파이썬의 리스트는 서랍 같은 놈이다
++ 연산을 하면, 문자열처럼 붙이기를 한다
+"""
+list1=[1,2]
+list2=[3,4]
+list3= list1+list2
+# print(f"list1+list2={list3}")
+
+list1=["문자1","문자2"]
+# 리스트에서 원소 접근   "문자1" 출력
+#print(f"list1[0]={list1[0]}")
+
+"""
+IndexError(참조위치에러): 
+list index(참조위치) out of range(범위를 벗어남)
+"""
+# print(f"list1[2]:{list1[2]}")
+
+bool1=True
+bool2=False
+
+# 1
+# print(f"bool+bool2={bool1+bool2}")
+
+dict1={"제품명":"바나나"}
+dict2={"제품명":"딸기"}
+# 에러남. 딕셔네리는 연산을 할수 없다고 함
+# print(f"dict1+dict2={dict1+dict2}")
 
 
+"""
+리스트는 여러가지를 한꺼번에 담을수 있는놈
+파이썬 리스트는 아무거나 다 담을수 있음
+나중에 배울 numpy 와 리스트는 다른놈임
+"""
+#      0   1  2  3
+list1=[99,80,60,70]
+list2=["고양이","개","말"]
+
+"""
+리스트
+list1=[99,80,60,70]
+에서 첫번째 원소와 마지막 원소를 더해서 출력해 보세요
+"""
 
 
