@@ -1,0 +1,33 @@
+2주안에 numpy까지 진도
+
+matplot, pandas(기초)
+
+손실함수
+
+최적화함수
+
+파라미터
+
+역전파 과정
+
+이미지 사이즈 맞추기,
+배경제거
+
+opencv - 얼굴만 딱 따고 가볍고 좋음.
+
+https://www.tensorflow.org/tutorials/generative/dcgan?hl=ko&_gl=1*1h44fvd*_up*MQ..*_ga*MjA3MTA1NzA4OS4xNzQ5NzAwMjky*_ga_W0YLR4190T*czE3NDk3MDAyOTEkbzEkZzAkdDE3NDk3MDA1NjYkajYwJGwwJGgw
+-GAN image 생성
+
+https://www.tensorflow.org/api_docs/python/tf
+- dataset
+
+
+�멸났吏��� 援먯쑁怨쇱젙 �ㅼ뒿 寃곌낵臾�
+�좏삎�뚭� 湲곕낯
+https://drive.google.com/drive/folders/1WEXPuq4bvaVIg7NUEb0gItkN_Sga2Ye3?usp=sharing
+湲곗큹�숈뒿
+https://drive.google.com/drive/folders/1H2Oohp2dvEwzQcz9HupvaMsI_zOwcaxM?usp=sharing
+�멸났吏��� 2�뚯감 援먯쑁怨쇱젙
+https://drive.google.com/drive/folders/1jsmXtrCCSKtVMvsEpZWU0xJU3yCdmz6B?usp=sharing 
+�멸났吏��� 3�뚯감 援먯쑁怨쇱젙
+https://drive.google.com/drive/folders/1Jwv2fPOsIh8B2tAd7OxuuYmVPAI5nS0O?usp=sharing
