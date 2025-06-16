@@ -267,3 +267,8 @@ coupang_list 1번째 인덱스의 제품 이름과 제조사 정보를 printf �
 """
 print(f"coupang_list[1]: {coupang_list[1]['name']},{coupang_list[1]['제조사']}")
 
+coupang_item1={"name":"컴퓨터","price":"233423원"
+               ,"제조사":"삼성", 
+               "sub":{"name":"cpu","model":"ryzen5600"}
+               }
+coupang_item1['sub']['model']
