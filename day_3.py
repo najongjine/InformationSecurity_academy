@@ -243,3 +243,19 @@ list1[1:5:2] == [80, 70]
 
 """
 # print(list1[1:5:])
+
+"""
+딕셔네리-
+서버에서 웹으로 데이터 전달할때 많이 쓰이는 자료형
+          key    값
+person1={"이름":"뭐뭐1","학번":"11121"}
+"""
+person1={"이름":"뭐뭐1","학번":"11121"}
+print(f"person1:{person1}")
+
+coupang_item1={"name":"컴퓨터","price":"233423원","제조사":"삼성"}
+coupang_item2={"name":"옥수수","price":"2334원","제조사":"농장"}
+coupang_item3={"name":"샴푸","price":"1334원","제조사":"화장품회사"}
+
+coupang_list=[coupang_item1,coupang_item2,coupang_item3]
+
