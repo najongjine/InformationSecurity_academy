@@ -158,5 +158,16 @@ elif b:
     pass
     pass
 
-my_typing=input("아무거나 타이핑 해주소 엔터 치세요:")
+my_typing=input("숫자를 입력하세요:")
 print(f"my_typing: {my_typing}")
+print(f"my_typing type: {type(my_typing)}")
+my_number=int(my_typing)
+
+"""
+짝수/홀수 판별기
+
+키보드로부터 숫자를 입력받고, 해당 숫자가
+홀수인지 짝수인지 판별해서 알려주세요
+ 6 % 2 == 0    이러면 짝수
+"""
+
