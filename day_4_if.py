@@ -111,6 +111,31 @@ if a==b:
     pass
 if a<b:
     pass
-if(){
 
-}
+"""
+else if
+위쪽 if가 참이 아니면 실행
+
+else
+조건이 다 참이 아니면 실행
+
+elif든지, else든지 단독으로는 절대 사용 불가
+if a:
+    pass
+elif a:
+    pass
+else :
+    pass
+"""
+a=True
+b=False
+c=False
+if b:
+    #print(f" if 문")
+    pass
+elif c:
+    #print(f"elif 문")
+    pass
+else :
+    #print(f"else 문")
+    pass
