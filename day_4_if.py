@@ -157,8 +157,8 @@ elif b:
         pass
     pass
     pass
-
-my_typing=input("숫자를 입력하세요:")
+my_typing=0
+#my_typing=input("숫자를 입력하세요:")
 print(f"my_typing: {my_typing}")
 print(f"my_typing type: {type(my_typing)}")
 my_number=int(my_typing)
@@ -170,7 +170,8 @@ my_number=int(my_typing)
 홀수인지 짝수인지 판별해서 알려주세요
  6 % 2 == 0    이러면 짝수
 """
-my_typing=int(input("숫자를 입력하세요:"))
+my_typing=0
+# my_typing=int(input("숫자를 입력하세요:"))
 
 if my_typing % 2 == 0:
     print(f"짝수 입니다")
@@ -189,3 +190,16 @@ if my_typing % 2 == 0:
     pass
 else:
     print(f"홀수 입니다")
+
+
+"""
+성적 표시.
+키보드로부터 숫자를 입력받고
+90점 이상이면 A
+89~80 이면 B
+79~70 이면 C
+69~60 이면 D
+그 이하면 F
+
+위에께 너무 쉬우면 계산기 만들어 보죠
+"""
