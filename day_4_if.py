@@ -37,7 +37,66 @@ if문은 모든 분야에서 다쓰임
 """
 
 if(True):
-    print(f"조건문이 True 라서 여기가 실행 됬네요")
+    #print(f"조건문이 True 라서 여기가 실행 됬네요")
     # pass는 아무 의미 없는 코드
     pass
+if False:
+    print(f"조건문이 False라서 여기는 실행 안됬네요")
 
+a= "      "
+if(a):
+    #print(f"a : {a}")
+    None
+a= ""
+if(0):
+    #print(f"0 : {0}")
+    None
+
+
+"""
+if 문의 조건을 잘 써줘야 하는데,
+이게 사람의 관점과 아주아주 틀리다
+조건문은 컴퓨터 입장의 수식을 써줘야 한다
+만약, 조건수식이 잘못되면, 빨간줄이 뜬다
+
+컴퓨터 입장에선, 
+None, null, "", 0, False
+얘네들은 False와 동일하다
+
+if 빨간문 보이면 자동으로 열어줘:
+    pass
+이런건 컴퓨터 입장에선 수식이 아님.
+
+수식=
+변수, 상수, 함수, 삼항연산자, 비트연산자, 사칙연산도
+
+"""
+
+# 조건문에 변수 써보기
+x=10
+x="문자열"
+x=[1,23]
+x={"key1":"뭐뭐뭐"}
+x=0.0000000001
+if x:
+    #print(f"x:{x}")
+    None
+
+# 상수
+if 1:
+    #print(f"조건문 실행")
+    pass
+if "문자열":
+    #print(f"조건문 실행")
+    pass
+if [1,2,3]:
+    #print(f"조건문 실행")
+    pass
+
+
+def dummyFunc():
+    return True
+
+if dummyFunc():
+    print(f"함수도 조건수식으로 쓸수 있네요. {dummyFunc()}")
+    pass
