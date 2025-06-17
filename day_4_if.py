@@ -170,4 +170,22 @@ my_number=int(my_typing)
 홀수인지 짝수인지 판별해서 알려주세요
  6 % 2 == 0    이러면 짝수
 """
+my_typing=int(input("숫자를 입력하세요:"))
 
+if my_typing % 2 == 0:
+    print(f"짝수 입니다")
+    pass
+if my_typing % 2 !=0:
+    print(f"홀수 입니다")
+
+if my_typing % 2 == 0:
+    print(f"짝수 입니다")
+    pass
+elif my_typing % 2 > 0:
+    print(f"홀수 입니다")
+
+if my_typing % 2 == 0:
+    print(f"짝수 입니다")
+    pass
+else:
+    print(f"홀수 입니다")
