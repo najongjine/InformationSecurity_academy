@@ -203,3 +203,25 @@ else:
 
 위에께 너무 쉬우면 계산기 만들어 보죠
 """
+score=0
+#score = int(input("성적점수 입력:"))
+if score >= 90:
+    print("A학점")
+if 89 >= score >= 80:
+    print("B학점")
+if 79 >= score >= 70:
+    print("C학점")
+if 69>=score>=60 :
+    print("D학점")
+if score < 60:
+    print("F학점")
+
+
+
+person1={"이름":"박종진","비번":"1234"}
+password=input("비밀번호:")
+
+if password == person1['비번']:
+    print("로그인 성공")
+else:
+    print("비밀번호가 틀렸습니다")
