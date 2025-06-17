@@ -1,4 +1,10 @@
 """
+자바 간단 소개,
+데이터타입 소개,
++ 연산 체험
+list[dict] 조합
+"""
+"""
 자바 특강
 
 파이썬:
@@ -7,8 +13,8 @@ if
 a="dfdd"
 switch
 a=True
+print(a)
 
-=?a={"key1":"value1"}
 
 답은? 
 
@@ -272,3 +278,6 @@ coupang_item1={"name":"컴퓨터","price":"233423원"
                "sub":{"name":"cpu","model":"ryzen5600"}
                }
 coupang_item1['sub']['model']
+
+list2=[[[1,2]
+       ,[3,4]]]
