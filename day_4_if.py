@@ -139,3 +139,24 @@ elif c:
 else :
     #print(f"else 문")
     pass
+
+if a:
+    pass
+elif a:
+    pass
+
+"""
+elif, else 는 꼭 쓰지 않아도 되요
+"""
+
+if a:
+    if b:
+        pass
+elif b:
+    if a:
+        pass
+    pass
+    pass
+
+my_typing=input("아무거나 타이핑 해주소 엔터 치세요:")
+print(f"my_typing: {my_typing}")
