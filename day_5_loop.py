@@ -63,4 +63,12 @@ for i in range(2,10):
         print(f"{i} * {j} = {i*j}")
         pass
 
+# 이거 오름차순으로 정렬하기
+"""
+이중 for 문으로 해결 가능.
+numbers[i] 랑 numbers[i+1] 이랑 비교후, i 가 더 크면 
+temp= numbers[i]
+numbers[i]=numbers[i+1]
+numbers[i+1]=temp
+"""
 numers=[2,54,22,7,9,4,23,5,78,4,23455346534,43342,43567]
