@@ -60,7 +60,7 @@ for i in range(3):
 
 for i in range(2,10):
     for j in range(1,10):
-        print(f"{i} * {j} = {i*j}")
+        #print(f"{i} * {j} = {i*j}")
         pass
 
 # 이거 오름차순으로 정렬하기
@@ -76,6 +76,101 @@ numbers[i+1]=temp
 swap 방법 2
 numers[j], numers[j + 1] = numers[j + 1], numers[j]
 """
+                                                    #12
 numers=[2,54,22,7,9,4,23,5,78,4,23455346534,43342,43567]
+numers[12]
+for i in numers:
+    pass
 
-list1=[{"key1":2},{"key1":92},{"key1":12}]
+
+for i in range(len(numers)): # range(13) 이랑 같음 13 * 13
+    for j in range(len(numers)):
+        try:
+            if numers[j] > numers[j+1]:
+                numers[j],numers[j+1]=numers[j+1],numers[j]
+        except:
+            pass
+        pass
+#print(numers)
+
+"""
+try:
+    pass
+except:
+    pass
+
+이건 예외처리 코드입니다
+try 안쪽에서 코드가 에러가 나면 무조건 except 로 빠집니다.
+if
+else
+랑 약간 비슷합니다
+"""
+
+sdfsdsd=10
+
+if 10:
+    pass
+
+
+"""
+들여쓰기 (tab)
+파이썬은 들여쓰기에 매우 민감함.
+들여쓰기가 있으면, 들여써진 코드는 부모 코드가 있다는 뜻임
+
+if True :
+    들여쓰기
+elif True :
+    들여쓰기
+else :
+    들여쓰기
+
+for i in range(3):
+    들여쓰기
+
+try:
+    들여쓰기
+except:
+    들여쓰기
+
+if True:
+    if True:
+        들여쓰기 2번 해야 안쪽 if문 내용 실행
+    들여쓰기 한번은 위쪽 if문 내용
+"""
+
+
+"""
+forloop 를 정리하자면,
+얘도 보기엔 단순해 보이지만, 실제 코드 돌아가는거 생각하면 어지러움
+for
+    for 
+이렇게 있으면 상당히 복잡해짐.
+그래서 실전에선 저렇게 중첩 잘 안함
+
+실전에서 forloop로 할수 있는건 굉장히 많음
+
+* 쇼핑몰 만들때 제품 보여주기
+* AI 는 데이터 전처리 할때
+* 서버는 파일을 url 링크로 바꿀때
+* 게임 엔진 만들때도 필수
+"""
+
+"""
+함수-
+
+함수는 코드 뭉탱이를 한곳에 모아놓아서, 
+코드 분석 하기 싫은 사람도 갔다 쓰기만 하면 됨
+
+def 이름지어주기():
+    내용...
+
+함수는 만든 다음엔, 그냥 실행 안됨
+꼭 내가 호출을(사용을) 해줘야함
+"""
+# 함수 선언
+def print_hello():
+    print(f"hello")
+    pass
+
+# 함수 사용하기(호출)
+print_hello()
