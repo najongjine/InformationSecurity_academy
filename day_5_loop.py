@@ -174,3 +174,25 @@ def print_hello():
 
 # 함수 사용하기(호출)
 print_hello()
+
+"""
+함수는 매개변수를 받을수도 있고,
+값을 퉤 뱉을수도 있습니다
+"""
+
+# a,b 가 매개변수
+def sum(a,b):
+    c=1
+    # 리턴값. 퉤 뱉은값
+    return a+b
+
+"""
+mod 연산 (%) 하는 함수를 만들어 보세요.
+매개변수 2개를 받아서 mod 연산을 하면 됩니다.
+"""
+
+def mod(a,b):
+    #print(f"{a%b}")
+    return a%b
+
+print(mod(2,3))
