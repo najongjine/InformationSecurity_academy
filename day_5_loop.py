@@ -67,8 +67,15 @@ for i in range(2,10):
 """
 이중 for 문으로 해결 가능.
 numbers[i] 랑 numbers[i+1] 이랑 비교후, i 가 더 크면 
+
+swap 방법 1
 temp= numbers[i]
 numbers[i]=numbers[i+1]
 numbers[i+1]=temp
+
+swap 방법 2
+numers[j], numers[j + 1] = numers[j + 1], numers[j]
 """
 numers=[2,54,22,7,9,4,23,5,78,4,23455346534,43342,43567]
+
+list1=[{"key1":2},{"key1":92},{"key1":12}]
