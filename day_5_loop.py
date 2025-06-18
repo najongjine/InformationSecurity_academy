@@ -30,7 +30,7 @@ for i in range(2,10):
 
 list1=["사과","바나나","딸기"]
 for e in list1:
-    print(e)
+    #print(e)
     pass
 """
 시험문제 낼때 빼고는 잘 안써요.
@@ -40,7 +40,8 @@ for e in list1:
 i=0
 while i<3:
     #print(i)
-    #i=i+1, ++i, i++, i+=1
+    #i=i+1, i+=1
+    i+=1
     pass
 
 """
@@ -49,4 +50,17 @@ while i<3:
 2*2=4
 ...
 9*9=81
+
+if:
+    if:
+    
+for i in range(3):
+    for i in range(3):
 """
+
+for i in range(2,10):
+    for j in range(1,10):
+        print(f"{i} * {j} = {i*j}")
+        pass
+
+numers=[2,54,22,7,9,4,23,5,78,4,23455346534,43342,43567]
