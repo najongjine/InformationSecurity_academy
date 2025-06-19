@@ -134,4 +134,20 @@ def count_ones(s):
     mid = len(s) // 2
     return count_ones(s[:mid]) + count_ones(s[mid:])
 
-count_ones("1011")
+#print(count_ones("101110"))
+
+
+def fPrimeNum(a):
+    bPrimeNum=True
+    for i in range(2,a):
+        bPrimeNum=False
+        break
+    return bPrimeNum
+
+
+num1=int(input("숫자를 입력하세요:"))
+bPrimeNum=fPrimeNum(num1)
+if bPrimeNum:
+    print(f"{num1} 은 소수 입니다")
+else:
+    print(f"{num1} 는 소수가 아닙니다")
