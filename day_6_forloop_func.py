@@ -164,4 +164,4 @@ else:
 mytype=""
 #mytype=input("수학 수식을 넣어주세요:")
 #result=eval(mytype)
-print(f"{mytype}:{result}")
+#print(f"{mytype}:{result}")
