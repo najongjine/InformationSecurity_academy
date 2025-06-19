@@ -165,3 +165,11 @@ mytype=""
 #mytype=input("수학 수식을 넣어주세요:")
 #result=eval(mytype)
 #print(f"{mytype}:{result}")
+
+# 모듈 : 다른 사람이 만든 코드 덩어리.  함수도 있음
+from random import shuffle
+list1=[]
+for i in range(1,46):
+    list1.append(i)
+shuffle(list1)
+print(f"추첨번호: {list1[0:6]}")
