@@ -131,10 +131,10 @@ else:
 def count_ones(s):
     if len(s) == 1:
         return 1 if s == '1' else 0
-    mid = len(s) // 2
+    mid = len(s) // 2 # 3/2 == 1
     return count_ones(s[:mid]) + count_ones(s[mid:])
 
-#print(count_ones("101110"))
+print(f"count_ones: {count_ones("101110")}")
 
 
 def fPrimeNum(a):
@@ -144,10 +144,24 @@ def fPrimeNum(a):
         break
     return bPrimeNum
 
-
-num1=int(input("숫자를 입력하세요:"))
+num1=7
+#num1=int(input("숫자를 입력하세요:"))
 bPrimeNum=fPrimeNum(num1)
 if bPrimeNum:
     print(f"{num1} 은 소수 입니다")
 else:
     print(f"{num1} 는 소수가 아닙니다")
+
+"""
+내장함수, 외장함수 -
+이것들은, 누군가가 이미 만들어 놓은거 갔다 쓰는거에요
+스타일과 사용 방법은 만든 사람마다 다 달라요
+
+*백화점세트 - 진짜 좋아요. 너무 쉽고 편해요
+
+*철물점세트 - 이게 짜증나요. 사용법 읽어보면서 해야되요
+"""
+mytype=""
+#mytype=input("수학 수식을 넣어주세요:")
+#result=eval(mytype)
+print(f"{mytype}:{result}")
