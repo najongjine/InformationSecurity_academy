@@ -172,4 +172,36 @@ list1=[]
 for i in range(1,46):
     list1.append(i)
 shuffle(list1)
-print(f"추첨번호: {list1[0:6]}")
+#print(f"추첨번호: {list1[0:6]}")
+
+#* i 1 이랑 pop 1, 이랑 곱하기
+#* forloop 입장에선 두번째임. [2,3,4,5] 에서 3을 택. i 가 3
+# pop은 2     2*3
+#* forloop 입장에선 3번째임. [3,4,5] 에서 5을 택. i 가 5
+# pop은 3     3*5
+list1=[1,2,3,4,5]
+result=[list1.pop(0) * i for i in list1]
+print(result) # 1,6,15
+
+1
+2
+3
+list1=[1,2,3,4,5]
+result=[list1.pop(0) for i in list1]
+print(f"result:{result}") # 1,2,3
+
+"""
+pop 기준이랑 i의 index 접근이랑 따로놀음
+forloop 먼저실행, 그다음 pop이 실행
+1.for 에 list1 이 담기고, list1[0] 값을 pop list1=[2,3,4,5]
+list[0] pop     list1=[3,4,5]
+list[0] pop     list1=[4,5]
+"""
+
+"""
+자바랑 파이썬은 포인터가 없으니
+int, string, bool 얘네들은 복사
+
+list는 참조
+"""
+
