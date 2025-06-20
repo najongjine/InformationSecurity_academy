@@ -205,3 +205,56 @@ int, string, bool 얘네들은 복사
 list는 참조
 """
 
+"""
+클래스-
+파이썬 생태계에선, 모듈 만드는 사람 말고는 잘 안쓰임
+
+"""
+# 기본 틀
+class MyClass:
+    def __init__(self):
+        pass
+
+class Customer:
+    def __init__(self,name,birthdate,rank):
+        self.name=name
+        self.birthdate=birthdate
+        self.rank=rank
+        pass
+
+myclass1=MyClass()
+customer1=Customer("박종진","1987","일반고객")
+print(customer1.name)
+print(customer1.birthdate)
+
+
+"""
+클래스- 붕어빵 틀 기계
+
+객체- 붕어빵
+
+이렇게 쉬우면 얼마나 좋겠어요... 하지만 실전에서 클래스를
+써보면 너무 어려워요
+
+클래스는 대부분 자바,c#,c++ 얘네가 쓰고
+자바스크립트, 파이썬은 잘 안써요
+"""
+class Animal:
+    def __init__(self):
+        pass
+    def bark(self):
+        print("Animal으르릉...")
+class Animal2:
+    def __init__(self):
+        pass
+    def bark(self):
+        print("Animal2으르릉...")
+class Dog(Animal,Animal2):
+    def __init__(self,name):
+        self.name=name
+    def run(self):
+        print("달려가요~~")
+        
+dog1=Dog("보더콜리")
+dog1.bark()
+dog1.run()
