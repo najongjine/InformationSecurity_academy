@@ -239,22 +239,47 @@ print(customer1.birthdate)
 클래스는 대부분 자바,c#,c++ 얘네가 쓰고
 자바스크립트, 파이썬은 잘 안써요
 """
-class Animal:
-    def __init__(self):
-        pass
-    def bark(self):
-        print("Animal으르릉...")
-class Animal2:
-    def __init__(self):
-        pass
-    def bark(self):
-        print("Animal2으르릉...")
-class Dog(Animal,Animal2):
-    def __init__(self,name):
-        self.name=name
-    def run(self):
-        print("달려가요~~")
         
-dog1=Dog("보더콜리")
-dog1.bark()
-dog1.run()
+class Animal:
+    def speak(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def speak(self):  # 오버라이딩
+        print("Bark")
+
+animal1 = Dog()
+animal1.speak()
+
+
+# 파이썬 클래스 변수
+class Person:
+    species = "인간"  # 클래스 변수
+
+    def __init__(self, name):
+        self.name = name  # 인스턴스 변수
+
+p1 = Person("영희")
+p2 = Person("민수")
+print(Person.species) # 인간
+print(p1.species) # 인간
+print(p2.species) # 인간
+p2.species="외계인"
+print("------------------")
+print(Person.species) # 인간
+print(p1.species) # 인간
+print(p2.species) # 외계인
+
+
+
+class Parent1:
+    def __init__(self):
+        print("parent1 init")
+        pass
+class Child1(Parent1):
+    def __init__(self):
+        print("child1 init")
+        pass
+
+p=Parent1()
+c=Child1()
