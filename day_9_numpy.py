@@ -58,3 +58,10 @@ cnn2d( my_numpy )
 
 그래야 컴퓨터에서 표현이 되니까요
 """
+
+color_img = np.zeros((100,100,3))
+print(color_img.shape)
+plt.imshow(image)
+plt.title('100*100 color image')
+plt.axis('off')
+plt.show()
