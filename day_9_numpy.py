@@ -61,7 +61,7 @@ cnn2d( my_numpy )
 
 color_img = np.zeros((100,100,3))
 print(color_img.shape)
-plt.imshow(image)
+plt.imshow(color_img)
 plt.title('100*100 color image')
 plt.axis('off')
 plt.show()
