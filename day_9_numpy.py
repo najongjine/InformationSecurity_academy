@@ -92,3 +92,61 @@ reshape을 하는 이유:
 reshape은 행렬의 모습만 바꾸는거고,
 안의 숫자 데이터는 바꾸지 않아요
 """
+
+# 이미지에서는 100장의 28*28 사이즈 이미지를 뜻합니다
+images=np.random.rand(100,28,28)
+# 이미지 100장 28*28 에서 흑백 이미지를 뜻해요
+images=images.reshape(100,28,28,1)
+
+
+a= np.array([[1,2],[3,4]])
+r=a.ravel()
+f=a.flatten()
+#print(r)
+#print(f)
+
+"""
+ravel flatten 을 쓰면
+다차원 행렬을 1차원으로 바꿔줘요
+"""
+
+a = np.array([[10, 20, 30],
+              [40, 50, 60],
+              [70, 80, 90]])
+#print(a[:, 1])
+#print(a[1, :])
+#print(a[-1])
+
+color_img = np.zeros((100,100,3))
+color_img[0:50,0:50]=[0.4,0.4,0.2]
+color_img[0:50,50:100]=[0,1,0]
+color_img[50:100,50:100]=[1,1,1]
+
+features=color_img[25:75,35:80]
+#print(features.shape)
+#plt.imshow(features)
+#plt.title('crop color image')
+#plt.axis('off')
+#plt.show()
+
+
+a = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+a+=10
+
+a+np.array([[10], [20]])
+#print(a*np.array([[10], [20]]))
+
+# 행렬 필터처리 방식
+heights=np.array([160,172,185,150,177])
+filter1=heights>170
+#print(heights[filter1])
+
+# 평균처리
+scores = np.array([80, 90, 85, 70, 100])
+avg = np.mean(scores)
+
+# 표준편차. 얼마나 평균에서 떨어져 있는지
+std = np.std(scores)
+print(std)  # 10.0
