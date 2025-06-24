@@ -60,9 +60,9 @@ cnn2d( my_numpy )
 """
 
 color_img = np.zeros((100,100,3))
-color_img[0:50,0:50]=[0.2,0.6,0.2]
-color_img[0:50:100]=[0,1,0]
-color_img[50:100,50:100][1,1,1]
+color_img[0:50,0:50]=[0.4,0.4,0.2]
+color_img[0:50,50:100]=[0,1,0]
+color_img[50:100,50:100]=[1,1,1]
 print(color_img)
 plt.imshow(color_img)
 plt.title('100*100 color image')
