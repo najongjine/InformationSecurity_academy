@@ -94,4 +94,12 @@ for i,vector in enumerate(vectorized_sentences):
 print(f"numpy sentence:")
 print(padded_array)
 
+def sentence_to_vector(sentence, word_to_index, max_len):
+    words=sentence.split()
+    vector=[word_to_index.get(word,-1) for word in words]
+    #없는 단어는 제거
+    vector=[v for v in vector if v!=-1]
+    padded=np.zeros((max_len,),dtype=int)
+    padded[:len(vector)]=vector[:max_len]
+    return padded
 
