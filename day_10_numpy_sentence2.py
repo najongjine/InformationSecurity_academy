@@ -127,4 +127,6 @@ def find_most_similar(sentence,sentences,padded_array
         print(f"가장 유사한 문장: {sentences[best_index]}")
         print(f"유사도:{best_score:.2f}")
 
-
+new_sentence="나는 밥을 안 먹었다"
+find_most_similar(new_sentence,sentence,padded_array
+                  ,word_to_index,max_len)
