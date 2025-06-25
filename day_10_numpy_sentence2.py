@@ -110,3 +110,8 @@ def cosine_similarity(vec1, vec2):
         return 0.0
     return np.dot(vec1,vec2)/((norm(vec1)*norm(vec2)))
 
+def find_most_similar(sentence,sentences,padded_array
+                      ,word_to_index,max_len):
+    new_vec=sentence_to_vector(sentence,word_to_index,max_len)
+    
+
