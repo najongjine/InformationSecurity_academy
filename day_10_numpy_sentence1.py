@@ -77,4 +77,12 @@ len(sentences) = 2
 # 만들고 싶은 배열의 크기 → (2줄, 3칸)
 """
 padded_array=np.zeros((len(sentences),max_len),dtype=int)
-print(f"padded_array.shape : {padded_array.shape}")
+print(f"padded_array.shape : {padded_array.shape}") # (3,4)
+"""
+지금까지의 padded_array:
+[
+    [0,0,0,0]
+    [0,0,0,0]
+    [0,0,0,0]
+]
+"""
