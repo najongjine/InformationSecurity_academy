@@ -108,4 +108,5 @@ def sentence_to_vector(sentence, word_to_index, max_len):
 def cosine_similarity(vec1, vec2):
     if norm(vec1)==0 or norm(vec2) ==0:
         return 0.0
+    return np.dot(vec1,vec2)/((norm(vec1)*norm(vec2)))
 
