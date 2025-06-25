@@ -86,3 +86,9 @@ print(f"padded_array.shape : {padded_array.shape}") # (3,4)
     [0,0,0,0]
 ]
 """
+
+for i,vector in enumerate(vectorized_sentences):
+    padded_array[i,:len(vector)]=vector
+
+print(f"numpy sentence:")
+print(padded_array)
