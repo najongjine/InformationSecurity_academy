@@ -1,4 +1,5 @@
 import numpy as np
+from numpy.linalg import norm
 
 # 처리할 문장들
 sentences=[
@@ -94,6 +95,7 @@ for i,vector in enumerate(vectorized_sentences):
 print(f"numpy sentence:")
 print(padded_array)
 
+# word_to_index : 단어사전   sentence: 새로운 문장
 def sentence_to_vector(sentence, word_to_index, max_len):
     words=sentence.split()
     vector=[word_to_index.get(word,-1) for word in words]
@@ -102,4 +104,8 @@ def sentence_to_vector(sentence, word_to_index, max_len):
     padded=np.zeros((max_len,),dtype=int)
     padded[:len(vector)]=vector[:max_len]
     return padded
+
+def cosine_similarity(vec1, vec2):
+    if norm(vec1)==0 or norm(vec2) ==0:
+        return 0.0
 
