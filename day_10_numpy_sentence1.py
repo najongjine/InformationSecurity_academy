@@ -13,6 +13,7 @@ index=0
 
 for sentence in sentences:
     words=sentence.split()
+    print(f"words:{words}")
     for word in words:
         if word not in word_to_index:
             word_to_index[word]=index
