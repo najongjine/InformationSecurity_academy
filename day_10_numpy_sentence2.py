@@ -113,5 +113,18 @@ def cosine_similarity(vec1, vec2):
 def find_most_similar(sentence,sentences,padded_array
                       ,word_to_index,max_len):
     new_vec=sentence_to_vector(sentence,word_to_index,max_len)
-    
+    best_score=-1
+    best_index=-1
+    for i, old_vec in enumerate(padded_array):
+        score=cosine_similarity(new_vec,old_vec)
+        print(f"-> {sentences[i]} 와 유사도:{score:.2f}")
+        if score>best_score:
+            best_score=score
+            best_index=i
+    if best_score == 1.0:
+        print(" ## 완전히 같은 문장이 있습니다")
+    else:
+        print(f"가장 유사한 문장: {sentences[best_index]}")
+        print(f"유사도:{best_score:.2f}")
+
 
