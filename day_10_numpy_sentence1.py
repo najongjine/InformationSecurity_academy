@@ -52,3 +52,28 @@ len([4, 5]) → 2
 len([6, 7, 8, 9]) → 4
 """
 max_len = max(len(v) for v in vectorized_sentences)
+print(f"max_leng: {max_len}")
+
+"""
+sentences 개수만큼 줄(row)을 만들고,
+max_len 길이만큼 칸(column)을 만들어서
+모두 0으로 채운 2차원 배열을 만드는 코드입니다.
+
+sentences = [
+    ["나는", "밥을", "먹었다"],
+    ["너는", "잤다"]
+]
+# 각 문장 → 숫자로 바꾸고 나면:
+vectorized_sentences = [
+    [1, 2, 3],
+    [4, 5]
+]
+# 가장 긴 문장의 길이
+max_len = 3
+
+# 문장 개수
+len(sentences) = 2
+
+# 만들고 싶은 배열의 크기 → (2줄, 3칸)
+"""
+padded_array=np.zeros((len(sentences),max_len),dtype=int)
