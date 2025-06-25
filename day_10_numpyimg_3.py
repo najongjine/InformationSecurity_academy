@@ -6,16 +6,14 @@ import matplotlib.pyplot as plt
 img= Image.open('test1.png').convert('RGB')
 img_np=np.array(img)
 
-# 발기 증가. RGB 각 채널에 50씩 더함
-brighter=img_np.astype(np.int32) + 50
-
-brighter=np.clip(brighter,0,255).astype(np.uint8)
+# 좌우반전: 열(가로축) 순서를 뒤집는다
+flipped=img_np[:,::-1,:]
 
 plt.subplot(1,2,1)
 plt.title("original")
 plt.imshow(img_np)
 
 plt.subplot(1,2,2)
-plt.title("brighter")
-plt.imshow(brighter)
+plt.title("flipped")
+plt.imshow(flipped)
 plt.show()
