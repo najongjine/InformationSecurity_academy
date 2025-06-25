@@ -38,3 +38,17 @@ for sentence in sentences:
     vectorized_sentences.append(vector)
 
 print(f"숫자 벡터화:", vectorized_sentences)
+
+# 길이를 맞춰서 Numpy 배열로 변환 (padding)
+"""
+vectorized_sentences = [
+    [1, 2, 3],        # 첫 번째 문장 (길이 3)
+    [4, 5],           # 두 번째 문장 (길이 2)
+    [6, 7, 8, 9]      # 세 번째 문장 (길이 4)
+]
+한 문장씩 길이 확인하면:
+len([1, 2, 3]) → 3  
+len([4, 5]) → 2  
+len([6, 7, 8, 9]) → 4
+"""
+max_len = max(len(v) for v in vectorized_sentences)
