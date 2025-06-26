@@ -1,5 +1,6 @@
 # pip install sentence-transformers
 from sentence_transformers import SentenceTransformer,util
+import torch
 
 
 model = SentenceTransformer('snunlp/KR-SBERT-V40K-klueNLI-augSTS')
@@ -26,3 +27,12 @@ with open("questions.txt","r",encoding="utf-8") as f:
 print(questions)
 print(ids)
 
+# 임베딩 생성
+embeddings=model.encode(questions,convert_to_tensor=True)
+
+torch.save({
+    'embeddings':embeddings,
+    'ids':ids,
+    'questions':questions
+},'question_embeddings.pt')
+print(f"임베딩 저장 완료 ! 총 {len(ids)} 개")
