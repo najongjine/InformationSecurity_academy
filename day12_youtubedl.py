@@ -1,3 +1,4 @@
+# https://github.com/najongjine/python_test/blob/main/GUIpyToExeBuild/dist/ytdl_gui.exe
 # pip install yt_dlp
 from yt_dlp import YoutubeDL
 import os
