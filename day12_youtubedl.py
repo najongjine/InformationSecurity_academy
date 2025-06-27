@@ -1,5 +1,8 @@
 # pip install yt_dlp
 from yt_dlp import YoutubeDL
+import os
+
+os.environ["PATH"] += os.pathsep + "C:\\ffmpeg\\bin"
 
 def download_video(url):
     ydl_opts={
@@ -14,5 +17,5 @@ def download_video(url):
     with YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
 
-url = ""
+url = "https://www.youtube.com/watch?v=ekr2nIex040"
 download_video(url)
