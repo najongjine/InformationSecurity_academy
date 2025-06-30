@@ -2,7 +2,7 @@
 pip install pandas
 """
 
-import pandas
+import pandas as pd
 
 """
 dictionary : 
@@ -24,15 +24,20 @@ mydataset = {
 dictionary를 pandas로 읽는건, 무조건 
 pandas.DataFrame(mydataset)
 이 코드로 정해져있다
-"""
+
 myvar = pandas.DataFrame(mydataset)
+"""
+
 
 #print(myvar)
 
 
 
-import pandas as pd
 
+
+
+
+"""
 data = {
   "calories": [420, 380, 390],
   "duration": [50, 40, 45]
@@ -42,18 +47,18 @@ df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
 
 print(df) 
 
-"""
 DataFrame or Series을 통해서 dictionary의 값을 table 형태로 보기
 column 은 집값
 row 의 이름은 년도
-
-"""
 
 data = {
   "집값": [50, 40, 45,55]
 }
 
 df = pd.DataFrame(data, index = [2025, 2024, 2023,2022])
+"""
+
+
 
 """
 성별 1-여성 2-남성
@@ -77,6 +82,48 @@ df = df[
 
 #print(df) 
 
-max_limit_bal_id=df['LIMIT_BAL'].idxmax()
-max_limit_bal=df.loc(max_limit_bal_id)
-print(max_limit_bal)
+
+filtered1=df[df['LIMIT_BAL'] <=0]
+
+
+products = [
+        {
+            "product_id": 1,
+            "name": "Wireless Mouse",
+            "price": 19.99,
+            "stock": 120,
+            "category": "Electronics"
+        },
+        {
+            "product_id": 2,
+            "name": "Mechanical Keyboard",
+            "price": 49.99,
+            "stock": 85,
+            "category": "Electronics"
+        },
+        {
+            "product_id": 3,
+            "name": "Water Bottle",
+            "price": 12.50,
+            "stock": 200,
+            "category": "Home & Kitchen"
+        },
+        {
+            "product_id": 4,
+            "name": "Yoga Mat",
+            "price": 25.00,
+            "stock": 60,
+            "category": "Sports"
+        },
+        {
+            "product_id": 5,
+            "name": "Bluetooth Speaker",
+            "price": 35.75,
+            "stock": 45,
+            "category": "Electronics"
+        },
+    ]
+
+df2 = pd.DataFrame(products)
+
+print(df2)
