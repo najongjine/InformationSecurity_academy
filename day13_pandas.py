@@ -55,7 +55,23 @@ data = {
 
 df = pd.DataFrame(data, index = [2025, 2024, 2023,2022])
 
+"""
+성별 1-여성 2-남성
 
+1	대학원 (Graduate school)
+2	대학교 (University)
+3	고등학교 (High school)
+4	기타 (Others)
+
+1	기혼 (Married)
+2	미혼 (Single)
+"""
 df = pd.read_csv('test1.csv')
-
+df=df[['LIMIT_BAL', 'SEX','EDUCATION','MARRIAGE','AGE']]
+# 조건 필터링
+df = df[
+    (df['SEX'].isin([1, 2])) &
+    (df['EDUCATION'].isin([1, 2, 3, 4])) &
+    (df['MARRIAGE'].isin([1, 2]))
+]
 print(df) 
