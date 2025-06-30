@@ -74,4 +74,9 @@ df = df[
     (df['EDUCATION'].isin([1, 2, 3, 4])) &
     (df['MARRIAGE'].isin([1, 2]))
 ]
-print(df) 
+
+#print(df) 
+
+max_limit_bal_id=df['LIMIT_BAL'].idxmax()
+max_limit_bal=df.loc(max_limit_bal_id)
+print(max_limit_bal)
