@@ -43,8 +43,19 @@ df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
 print(df) 
 
 """
-DataFrame을 통해서 dictionary의 값을 table 형태로 보기
+DataFrame or Series을 통해서 dictionary의 값을 table 형태로 보기
 column 은 집값
 row 의 이름은 년도
 
 """
+
+data = {
+  "집값": [50, 40, 45,55]
+}
+
+df = pd.DataFrame(data, index = [2025, 2024, 2023,2022])
+
+
+df = pd.read_csv('test1.csv')
+
+print(df) 
