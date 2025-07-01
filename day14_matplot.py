@@ -173,14 +173,45 @@ nrows: 몇 행(row)으로 나눌지
 ncols: 몇 열(column)으로 나눌지
 index: 그 중 몇 번째 칸에 그릴지
 """
-plt.subplot(1, 2, 1)
-plt.plot(x,y)
+#plt.subplot(1, 2, 1)
+#plt.plot(x,y)
+
+#plot 2:
+#x = np.array([0, 1, 2, 3])
+#y = np.array([10, 20, 30, 40])
+
+#plt.subplot(1, 2, 2)
+#plt.plot(x,y)
+
+#plt.show()
+
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+#plt.subplot(2, 1, 1)
+#plt.plot(x,y)
 
 #plot 2:
 x = np.array([0, 1, 2, 3])
 y = np.array([10, 20, 30, 40])
 
-plt.subplot(1, 2, 2)
-plt.plot(x,y)
+#plt.subplot(2, 1, 2)
+#plt.plot(x,y)
 
-plt.show()
+#plt.show()
+
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+
+"""
+plt.scatter() 이건 데이터를 .(점) 으로 보여줌
+인공지능에서 plt 그래프 보기중 제일많이 쓰는게, 선, 점, 이미지 보기
+
+plt.plot() 선
+plt.imshow() 이미지 보기
+"""
+#plt.scatter(x, y)
+#plt.show()
