@@ -221,5 +221,43 @@ y = np.array([35, 25, 25, 15])
 mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
 myexplode = [0.1, 0.0, 0.0, 0]
 
-plt.pie(y, labels = mylabels, explode = myexplode)
-plt.show() 
+#plt.pie(y, labels = mylabels, explode = myexplode)
+#plt.show() 
+
+import pandas as pd
+# CSV 파일 읽기
+df = pd.read_csv("test_people.csv")
+
+# 산점도 그리기
+"""
+👉 figsize=(8,6)이면
+가로 8인치 × 세로 6인치 크기의 캔버스를 만든다는 뜻이야.
+"""
+plt.figure(figsize=(8,6))
+plt.scatter(df["Height_cm"], df["Weight_kg"])
+
+plt.xlabel("Height (cm)")
+plt.ylabel("Weight (kg)")
+plt.title("Height vs. Weight Scatter Plot")
+
+# 이름 표시
+for i, name in enumerate(df["Name"]):
+    plt.annotate(name, (df["Height_cm"][i], df["Weight_kg"][i]),
+                 textcoords="offset points", xytext=(5,5), ha='left', fontsize=8)
+
+plt.grid(True)
+"""
+Matplotlib으로 여러 그래프나 요소(제목, 라벨 등)를 그리면,
+글자가 겹치거나 잘려서 안 보이는 경우가 많아.
+plt.tight_layout()은:
+
+그래프 간격
+
+레이블 위치
+
+여백
+
+을 자동으로 조정해서 보기 좋게 배치해줌.
+"""
+plt.tight_layout()
+plt.show()
