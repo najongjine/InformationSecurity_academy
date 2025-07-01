@@ -78,3 +78,15 @@ y2 = np.array([6, 2, 7, 11])
 # 아니면 한줄에 다하기
 #plt.plot(x1,y1,x2,y2)
 #plt.show()
+
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+plt.plot(x, y)
+
+# 그래프에서 x 축에 설명 넣어주기. 한글 쓰면 깨짐
+plt.xlabel("Average Pulse")
+# 그래프에서 y 축에 설명 넣어주기. 한글 쓰면 깨짐
+plt.ylabel("Calorie Burnage")
+plt.show()
