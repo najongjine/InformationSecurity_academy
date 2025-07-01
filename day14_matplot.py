@@ -83,10 +83,80 @@ y2 = np.array([6, 2, 7, 11])
 x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
 y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
 
-plt.plot(x, y)
+#plt.plot(x, y)
 
+#plt.title("Sports Watch Data")
 # 그래프에서 x 축에 설명 넣어주기. 한글 쓰면 깨짐
-plt.xlabel("Average Pulse")
+#plt.xlabel("Average Pulse")
 # 그래프에서 y 축에 설명 넣어주기. 한글 쓰면 깨짐
+#plt.ylabel("Calorie Burnage")
+#plt.show()
+
+
+"""
+지금 plt 모듈을 쓰고 있음
+plt.뭐뭐() 이렇게 나온놈들은 plt 의 내장 함수들임
+
+이말은 좀 고급 개념으로 말하자면, matplot으로 할수있는 기능들은
+plt. 뭐뭐뭐 이렇게 나온 놈들로 한정됨
+이걸 우리가 가진 핸들 이라고 한다
+"""
+
+
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+#plt.title("Sports Watch Data", fontdict = font1)
+#plt.xlabel("Average Pulse", fontdict = font2)
+#plt.ylabel("Calorie Burnage", fontdict = font2)
+
+#plt.plot(x, y)
+#plt.show()
+
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
 plt.ylabel("Calorie Burnage")
+
+#plt.plot(x, y)
+
+# 그래프에 그리드 그리기
+#plt.grid()
+
+#plt.show()
+
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+#plt.plot(x, y)
+
+# 그리드에 스타일을 부여 하는 방법
+#plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
+
+#plt.show()
+
+
+x = [1, 2, 3, 4, 5]
+y1 = [10, 15, 13, 17, 20]
+y2 = [12, 14, 11, 19, 22]
+
+"""
+.plot() 함수에 label='뭐뭐' 매개변수를 주면, 각 그래프 라인당 설명을 부여할수 있다
+"""
+plt.plot(x, y1, label='Series A')
+plt.plot(x, y2, label='Series B')
+
+plt.legend()
 plt.show()
