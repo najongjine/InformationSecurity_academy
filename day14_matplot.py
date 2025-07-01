@@ -32,6 +32,12 @@ ypoints = np.array([0, 250])
 """
 .plot() 은 matplot 보여주기 하기전에 셋팅 해주는 함수. 값을 배개변수로 받음
 """
-plt.plot(xpoints, ypoints)
+#plt.plot(xpoints, ypoints)
 # 보여주기
+#plt.show()
+
+xpoints = np.array([0, 8,10,30])
+ypoints = np.array([3, 8, 1, 10])
+
+plt.plot(xpoints,ypoints, marker = 'o')
 plt.show()
