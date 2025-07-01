@@ -241,6 +241,10 @@ plt.ylabel("Weight (kg)")
 plt.title("Height vs. Weight Scatter Plot")
 
 # 이름 표시
+"""
+index=0, name=Rebecca
+index=1, name=Ivy
+"""
 for i, name in enumerate(df["Name"]):
     plt.annotate(name, (df["Height_cm"][i], df["Weight_kg"][i]),
                  textcoords="offset points", xytext=(5,5), ha='left', fontsize=8)
