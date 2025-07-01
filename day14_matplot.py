@@ -59,7 +59,22 @@ linewidth 는 선의 굵기 정하기
 y1 = np.array([3, 8, 1, 10])
 y2 = np.array([6, 2, 7, 11])
 
-plt.plot(y1)
-plt.plot(y2)
+#plt.plot(y1)
+#plt.plot(y2)
 
-plt.show()
+#plt.show()
+
+
+
+x1 = np.array([0, 1, 2, 3])
+y1 = np.array([3, 8, 1, 10])
+x2 = np.array([0, 1, 2, 3])
+y2 = np.array([6, 2, 7, 11])
+
+# 요렇게 한쌍씩 묶어서 하는 스타일도 있고
+#plt.plot(x1,y1)
+#plt.plot(x2,y2)
+
+# 아니면 한줄에 다하기
+#plt.plot(x1,y1,x2,y2)
+#plt.show()
