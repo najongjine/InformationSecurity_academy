@@ -155,8 +155,32 @@ y2 = [12, 14, 11, 19, 22]
 """
 .plot() 함수에 label='뭐뭐' 매개변수를 주면, 각 그래프 라인당 설명을 부여할수 있다
 """
-plt.plot(x, y1, label='Series A')
-plt.plot(x, y2, label='Series B')
+#plt.plot(x, y1, label='Series A')
+#plt.plot(x, y2, label='Series B')
 
-plt.legend()
+#plt.legend()
+#plt.show()
+
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+"""
+.subplot() 이걸 쓰면 한꺼번에 많은 그래프 보여줄수 있음
+plt.subplot(nrows, ncols, index)
+nrows: 몇 행(row)으로 나눌지
+ncols: 몇 열(column)으로 나눌지
+index: 그 중 몇 번째 칸에 그릴지
+"""
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(1, 2, 2)
+plt.plot(x,y)
+
 plt.show()
