@@ -39,5 +39,27 @@ ypoints = np.array([0, 250])
 xpoints = np.array([0, 8,10,30])
 ypoints = np.array([3, 8, 1, 10])
 
-plt.plot(xpoints,ypoints, marker = 'o')
+#plt.plot(xpoints,ypoints)
+#plt.show()
+
+"""
+plt.plot(xpoints,ypoints) 함수 안에, 라인 스타일, 컬러를 정해줄수 있다
+
+plt.plot(ypoints, 'o:r') :
+꺽임 부분 o 모양으로, 선은 점선(dot) 모양으로, 색상은 빨강
+
+plt.plot(ypoints, '*--m') :
+꺽임 부분은 별 모양, 선은 dash 스타일선, 색상은 magenta
+
+plt.plot(ypoints, linewidth = '20.5'), plt.plot(ypoints, '*--m',linewidth = '20.5'):
+linewidth 는 선의 굵기 정하기
+"""
+
+
+y1 = np.array([3, 8, 1, 10])
+y2 = np.array([6, 2, 7, 11])
+
+plt.plot(y1)
+plt.plot(y2)
+
 plt.show()
