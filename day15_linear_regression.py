@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
 
 # pandas 로 csv 읽기
 #df=pd.read_csv("car_gasoline.csv")
@@ -50,3 +51,9 @@ price = house_size * 50 + np.random.randint(-200, 200, size=house_size.shape)
 # 데이터 확인
 print("집 크기:", house_size)
 print("가격:", price)
+
+plt.scatter(house_size, price)
+plt.xlabel("집 크기 (㎡)")
+plt.ylabel("가격 (만원)")
+plt.title("집 크기와 가격")
+plt.show()
