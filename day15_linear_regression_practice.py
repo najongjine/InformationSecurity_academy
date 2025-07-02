@@ -27,3 +27,17 @@ df = pd.DataFrame({
     "Unemployment": unemployment
 })
 X = df.values
+y = np.array(consumption)
+"""
+gdp =1000
+실업율 = 4
+
+이때 소비지출 구하세요
+"""
+model = LinearRegression()
+model.fit(X, y)
+
+# 새 데이터 예측
+new_data = np.array([[1000, 4]])   # GDP=1000, 실업률=4
+predicted_consumption = model.predict(new_data)[0]
+print(predicted_consumption)
