@@ -52,8 +52,19 @@ price = house_size * 50 + np.random.randint(-200, 200, size=house_size.shape)
 print("집 크기:", house_size)
 print("가격:", price)
 
-plt.scatter(house_size, price)
-plt.xlabel("집 크기 (㎡)")
-plt.ylabel("가격 (만원)")
-plt.title("집 크기와 가격")
-plt.show()
+#plt.scatter(house_size, price)
+#plt.xlabel("집 크기 (㎡)")
+#plt.ylabel("가격 (만원)")
+#plt.title("집 크기와 가격")
+#plt.show()
+
+# LinearRegression 이라는 누가 이미 만들어 놓은거 가져옴
+model=LinearRegression()
+#모델에다가 학습데이터와 정답을 같이 줌 학습끝
+model.fit(house_size.reshape(-1,1),price)
+
+my_house_size = 33
+
+X_input = np.array([[33]])
+predicted=model.predict(X_input)[0]
+print(f"내 집 가격: {predicted}")
