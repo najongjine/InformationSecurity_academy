@@ -60,5 +60,6 @@ model.fit(house_size.reshape(-1,1),price)
 my_house_size = 33
 
 X_input = np.array([[my_house_size]])
+#X_input = np.array([[weight_input, engine_input]])
 predicted=model.predict(X_input)[0]
 print(f"내 집 가격: {predicted}")
