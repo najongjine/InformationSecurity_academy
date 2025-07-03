@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
+import xgboost as xgb
 
 
 
@@ -31,7 +32,7 @@ y=df['질병여부'].values
 
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3)
 
-model=LogisticRegression()
+model=LinearRegression()
 model.fit(X_train,y_train)
 
 """
@@ -48,5 +49,5 @@ bloodpressure=135
 colestroll=240
 gene_malf=0
 new_person=np.array([[age,bloodpressure,colestroll,gene_malf]]) 
-predict=model.predict(new_person)
-predict(f"질명 예측 결롸: {predict}")
+prediction=model.predict(new_person)
+print(f"질명 예측 결롸: {prediction[0]}")
