@@ -26,5 +26,7 @@ from sklearn.model_selection import train_test_split
 # CSV 파일 불러오기
 df = pd.read_csv("medical_diagnosis.csv", encoding="utf-8")
 
-X= df[["나이","혈압","콜레스트롤","유전자이상여부"]]
+X= df[["나이","혈압","콜레스테롤","유전자이상여부"]]
 y=df['질병여부']
+
+print(X)
