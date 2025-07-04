@@ -38,7 +38,6 @@ X=pd.DataFrame({
     "ma_10":ma_10,
     "volatility":volatility,
     "rsi":rsi,
-    "next_close":next_close,
     "revenue":np.random.uniform(3000,7000,data_size), # 매출
     "net_income":np.random.uniform(100,500,data_size), #순이익
     "debt_ratio":np.random.uniform(20,80,data_size), # 부채비율
@@ -61,3 +60,19 @@ mse=mean_squared_error(y_test,y_pred)
 print("평균제곱오차:",mse)
 
 
+new_data=pd.DataFrame({
+    "close":[150],
+    "volume":[2500000],
+    "ma_5":[151],
+    "ma_10":[149],
+    "volatility":[2.5],
+    "rsi":[50],
+    "revenue":[5000], # 매출
+    "net_income":[300], #순이익
+    "debt_ratio":[40], # 부채비율
+    "per":[12] # PER
+    
+}).values
+
+new_pred=model.predict(new_data)
+print("예측한 종가:",new_pred[0])
