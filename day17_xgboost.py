@@ -49,16 +49,19 @@ df=pd.DataFrame({
     "grade":labels
 })
 
-X=df[["size","color","sweetness","weight"]].values
-y=df['grade'].values
+X=df[["size","color","sweetness","weight"]]
+y=df['grade'] -1
 
-X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=42)
+X_train,X_test,y_train,y_test=train_test_split(X.values,y.values,test_size=0.3,random_state=42)
 
 # 정답이 여러개일때 softmax 기법을 써요. 정답이 3개
 # 정답은 1등급 2등급, 3등급
 model=xgb.XGBClassifier(objective="multi:softmax",num_class=4)
+model.fit(X_train,y_train)
 
-#accuracy=accuracy_score(y_test,y_pred)
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"accuracy: {accuracy}")
 
 new_fruit=pd.DataFrame({
     "size":[8],
@@ -68,4 +71,4 @@ new_fruit=pd.DataFrame({
 }).values
 
 new_pred=model.predict(new_fruit)
-#print(f"과일등급:{new_pred}")
+print(f"과일등급:{new_pred[0]+1}")
