@@ -50,6 +50,17 @@ AI로 뭘 할수있냐
 
 https://colab.research.google.com/drive/1AbFTCu7f0RlZXXcmqI770oLEAf5ozoNW?usp=sharing
 
+컴퓨터가 이해하는 모델 레이어
 
+conv2d 는 이미지 numpy 데이터를 3*3 크기의 32개의 필더로 1칸씩 이동하면서
+행렬곱한 특징데이터를 남김.
+maxpooling은 행렬의 크기를 줄임
+
+사람이 이해하는거~
+model.sequential() 이건 공장 지으려고 땅 하나 준비
+conv2d(32 ....) 이건 32개의 특정 특징만 볼수있는 돋보기 32개(곡선, 직선, 검은색, 흰색)
+이걸 사용하면 1장의 이미지에서 32개의 새로운 특징이미지가 생성됨
+maxpooling은 이미지 크기를 줄이고, 흰색1,흰색2,흰색3,흰색4 이런짓을 컴퓨터에게
+자제시킴
 
 """
