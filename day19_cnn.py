@@ -48,4 +48,8 @@ AI로 뭘 할수있냐
 얼굴 인식	  ArcFace, FaceNet	인증, 추적
 이미지 생성	  Stable Diffusion	이미지 합성, 아트 생성
 
+https://colab.research.google.com/drive/1AbFTCu7f0RlZXXcmqI770oLEAf5ozoNW?usp=sharing
+
+
+
 """
