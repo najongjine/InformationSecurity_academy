@@ -38,4 +38,14 @@ AI로 뭘 할수있냐
 - 강화학습
 * DeepLearningCNN || Q-Learning
 
+인터넷이나 GPT 한테 AI 검색 해보면 드럽게 많이도 용어가 나와요
+하지만 그 수많은 모델들 중에서 살아남은 놈은 얼마 없어요
+
+
+자연어	     GPT             	요약, 생성, 번역, 챗봇
+이미지 분류	  ViT, CNN	        사진 분류, 품질 검사
+객체 탐지	  YOLO              cctv, 자율주행
+얼굴 인식	  ArcFace, FaceNet	인증, 추적
+이미지 생성	  Stable Diffusion	이미지 합성, 아트 생성
+
 """
