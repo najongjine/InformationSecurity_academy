@@ -1,4 +1,4 @@
-"""
+""" 복습 ...
 Scikit - 이건 숫자, 수치등을 가지고 예측하는 모델
 linear regression, logistic regression, 
 XGBoost -> XGRegression
@@ -65,4 +65,31 @@ maxpooling은 이미지 크기를 줄이고, 흰색1,흰색2,흰색3,흰색4 이
 
 
 https://colab.research.google.com/drive/1AbFTCu7f0RlZXXcmqI770oLEAf5ozoNW?usp=sharing
+"""
+
+
+"""
+2번째 conv2d 를 사용할시 어떻게 데이터가 흘러가는지 설명
+(6000,28,28,32) -> (6000,28,28,64) 로 변한다고 설명
+
+flatten() 설명.
+(6000,7,7,64) -> 1차원
+
+Dense(128,relu ...) 설명
+컴퓨터과학에선 128 뉴런에 완전연결
+사람입장에선 공부방법 128가지.
+“128개의 똑똑한 뉴런을 써서 정보를 분석해라.”
+
+1️⃣ Conv2D: 돋보기로 특징 찾기
+2️⃣ MaxPooling: 이미지 줄이고 데이터 줄이기
+3️⃣ Flatten: 2차원 이미지를 1차원 벡터로 펴기
+4️⃣ Dense(128): 특징을 종합해서 분석하기
+5️⃣ Dense(10, softmax): 최종 숫자 예측하기
+
+모델 빌드,
+예측코드 gpt로 뽑음
+그림판에서 손숫자 써봄
+
+예측이 이상해서 gpt에게 조언구함
+GPT는 input image 전처리 과정에서 데이터 변조감지. 수정코드 줌.
 """
