@@ -30,3 +30,36 @@ import tensorflow as tf
 이걸 해결해 주는 모듈이 있어요 
 ImageDataGenerator
 """
+
+
+"""
+컴퓨터는 고양이가 중앙에서 조금만 벗어나도 바보라서 못알아봐요
+그래서 이미지 한장을 회전도 시키고, 위치 중앙에서 벗어나기도 넣고, 좌우 반전도 시켜서
+이미지 한장을 여러가지 상황으로 지가 만들어요
+
+train_datagen= ImageDataGenerator(
+    rescale=1./255,
+    rotation_range=40,
+    width_shift_range=0.3,
+    height_shift_range=0.3,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest'
+)
+validation_datagen=ImageDataGenerator(rescale=1./255)
+
+train_generator=train_datagen.flow_from_directory(
+    directory=train_dir,
+    batch_size=BATCH_SIZE,
+    shuffle=True,
+    target_size=(IMG_HEIGHT,IMG_WIDTH),
+    class_mode='categorical'
+)
+validation_generator=validation_datagen.flow_from_directory(
+    directory=train_dir,
+    batch_size=BATCH_SIZE,
+    target_size=(IMG_HEIGHT,IMG_WIDTH),
+    class_mode='categorical'
+)
+"""
