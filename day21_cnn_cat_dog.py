@@ -76,4 +76,18 @@ model.add(MaxPool2D(pool_size=(2,2),strides=(2,2)))
 model.add(Flatten())
 model.add(Dense(128,activation='relu'))
 model.add(Dense(10,activation='softmax'))
+
+
+model.compile(
+    loss='categorical_crossentropy',
+    optimizer='adam',
+    metrics=['accuracy']
+)
+history=model.fit(
+    train_generator,
+    validation_data=validation_generator,
+    epochs=EPOCHS,
+    batch_size=BATCH_SIZE
+)
+model.save('my_cat_dog.h5')
 """
