@@ -129,3 +129,13 @@ plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.show()
 """
+
+
+"""
+흑백 이미지 판별 90% 짜리를 개 고양이 판별에 써봤더니
+75~80 간당간당해요
+
+그러면 고래, 사자, 상쾡이, 자동차, 시계....
+100가지 한다면 이거 모델 어떻게 구축해야할까?
+이제 한도끝도 없어요
+"""
