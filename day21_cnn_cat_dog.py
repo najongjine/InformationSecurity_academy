@@ -7,15 +7,30 @@
 
 
 from keras.models import Sequential
-from keras.layers import Dense,Dropout,Flatten,Conv2D,MaxPooling2D
+from keras.layers import Dense,Dropout,Flatten,Conv2D,MaxPooling2D,MaxPool2D
 from tensorflow.keras.optimizers import RMSprop
 
+#이미지 파일 읽고 조작해주는 모듈
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
+# numpy 밑 잡다
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+
+base_dir="cats_and_dogs_filtered"
+train_dir=os.path.join(base_dir,"train")
+validation_dir=os.path.join(base_dir,"validation")
+print(train_dir)
+print(validation_dir)
+
+# 한번에 100장의 사진을 가져와서 학습 시킨다
+BATCH_SIZE= 100
+# 학습 몇바퀴 시킬꺼냐
+EPOCHS=100
+IMG_HEIGHT=150
+IMG_WIDTH=150
 """
 
 """
@@ -68,14 +83,14 @@ validation_generator=validation_datagen.flow_from_directory(
 """
 model= Sequential()
 model.add(Conv2D(32, kernel_size=(3,3),padding='same'
-,activation='relu',input_shape=(28,28,1)))
-#model.add(MaxPool2D(pool_size=(2,2),strides=(2,2)))
+,activation='relu',input_shape=(IMG_HEIGHT,IMG_WIDTH,3)))
+model.add(MaxPool2D(pool_size=(2,2),strides=(2,2)))
 model.add(Conv2D(64, kernel_size=(3,3),padding='same'
 ,activation='relu'))
 model.add(MaxPool2D(pool_size=(2,2),strides=(2,2)))
 model.add(Flatten())
 model.add(Dense(128,activation='relu'))
-model.add(Dense(10,activation='softmax'))
+model.add(Dense(2,activation='softmax'))
 
 
 model.compile(
