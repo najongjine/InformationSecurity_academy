@@ -53,3 +53,20 @@ model.add(Dense(2,activation='softmax'))
 """
 
 python main.py --google true --naver true --full true --limit 250
+
+
+"""
+이미지 전처리-
+
+OK{
+    1번 사진 - 고양이 있고, 사람이 잡고 있다
+    2번 사진 - 고양이 있고, 카펫에 앉아 있다
+    3번사진 - 고양이 밥 먹는중
+}
+
+안좋음 {
+    1번 사진 - 고양이 있고, 사람이 잡고 있다
+    2번 사진 - 고양이 있고, 사람이 잡고 있다
+    3번사진 - 고양이 밥 먹는중
+}
+"""
