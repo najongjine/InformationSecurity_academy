@@ -23,6 +23,6 @@ def convert_webp_to_png(folder_path):
                 print(f"⚠️ 변환 실패: {filename} - {e}")
 
     print(f"\n총 {count}개의 .webp 파일이 PNG로 변환되었습니다.")
-
+path="C:/Users/itg/Documents/python_test/AutoCrawler/download/Mata Mata Turtle"
 # 사용 예시
-convert_webp_to_png("C:/Users/YourName/Desktop/images")  # 여기에 경로를 입력
+convert_webp_to_png(path)  # 여기에 경로를 입력
