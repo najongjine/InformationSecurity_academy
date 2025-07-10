@@ -1,12 +1,13 @@
 # 예측
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import img_to_array
 import numpy as np
 
 model=load_model('my_cat_dog.h5')
 
-img=image.load_img('cat.png',target_size=(150,150))
-img_array=img.img_to_array(img)/255.0
+img=image.load_img('longcat.png',target_size=(150,150))
+img_array=image.img_to_array(img)/255.0
 # 배치 크기 자동으로 넣어줌 (배치 크기, 높이, 너비, 채널) → 예: (1, 224, 224, 3)
 img_array=np.expand_dims(img_array,axis=0)
 
