@@ -51,3 +51,5 @@ model.add(Dense(2,activation='softmax'))
 }
 뒷부분만 조금 고쳐서 쓴다
 """
+
+python main.py --google true --naver true --full true --limit 250
