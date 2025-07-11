@@ -28,3 +28,7 @@ IMG_HEIGHT=224
 IMG_WIDTH=224
 
 base_dir='/conent/drive/MyDrive/dataset/wierd_animals'
+train_dir=os.path.join(base_dir,'train')
+validation_dir=os.path.join(base_dir,'validation')
+print(f"train_dir : {train_dir}")
+print(f"validation_dir : {validation_dir}")
