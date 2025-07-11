@@ -94,6 +94,7 @@ model=Model(inputs=base_model.input, outputs=output_layer)
 model.summary()
 
 
+
 from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.optimizers import Adam
 
@@ -105,7 +106,7 @@ model.compile(
     metrics=['accuracy']
     )
 early_stop=EarlyStopping(monitor='val_loss', patience=5
-                         ,restore_best_wieghts=True)
+                         ,restore_best_weights=True)
 history=model.fit(
     train_ds,
     epochs=EPOCHS,
