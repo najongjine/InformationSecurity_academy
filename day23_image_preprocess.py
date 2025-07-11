@@ -16,3 +16,15 @@ import matplotlib.pyplot as plt
 
 from google.colab import drive
 drive.mount('/content/drive')
+
+
+seed = 15
+np.random.seed(seed)
+tf.random.set_seed(seed)
+
+BATCH_SIZE= 20
+EPOCHS=50
+IMG_HEIGHT=224
+IMG_WIDTH=224
+
+base_dir='/conent/drive/MyDrive/dataset/wierd_animals'
