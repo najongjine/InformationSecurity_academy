@@ -93,3 +93,22 @@ output_layer=Dense(4,activation='softmax')(x)
 model=Model(inputs=base_model.input, outputs=output_layer)
 model.summary()
 
+
+from tensorflow.keras.losses import CategoricalCrossentropy
+from tensorflow.keras.optimizers import Adam
+
+loss_fn = CategoricalCrossentropy(label_smoothing=0.1)
+
+model.compile(
+    optimizer=Adam(learning_rate=0.0001),
+    loss=loss_fn,
+    metrics=['accuracy']
+    )
+early_stop=EarlyStopping(monitor='val_loss', patience=5
+                         ,restore_best_wieghts=True)
+history=model.fit(
+    train_ds,
+    epochs=EPOCHS,
+    validation_data=val_ds,
+    callbacks=[early_stop]
+)
