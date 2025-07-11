@@ -70,3 +70,26 @@ train_ds=train_ds.prefetch(tf.data.AUTOTUNE)
 
 val_ds=val_ds.map(resize_pad_preprocess,num_parallel_calls=tf.data.AUTOTUNE)
 val_ds=val_ds.prefetch(tf.data.AUTOTUNE)
+
+
+
+
+# include_top=False = 엔진은 가져가고, 껍데기 케이스는 버림
+base_model=EfficientNetB0(weights="imagenet",include_top=False
+                          ,input_shape=(IMG_HEIGHT,IMG_WIDTH,3))
+
+for layer in base_model.layers:
+  layer.trainable=False
+
+x=base_model.output
+x=GlobalAveragePooling2D()(x)
+x=Dense(128,activation='relu')(x)
+x=Dropout(0.5)(x)
+x=Dense(64,activation='relu')(x)
+x=Dropout(0.5)(x)
+# 여기는 내 클래스 갯수로 지정
+output_layer=Dense(4,activation='softmax')(x)
+
+model=Model(inputs=base_model.input, outputs=output_layer)
+model.summary()
+
