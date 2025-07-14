@@ -14,5 +14,5 @@ IMG_HEIGHT=224
 IMG_WIDTH=224
 
 model_path='/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.h5'
-label_path='/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.json
-model=load_model(model_path)'
+label_path='/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.json'
+model=load_model(model_path)
