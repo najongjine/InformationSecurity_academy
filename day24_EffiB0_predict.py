@@ -16,3 +16,14 @@ IMG_WIDTH=224
 model_path='/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.h5'
 label_path='/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.json'
 model=load_model(model_path)
+
+with open(label_path,'r') as f:
+  class_names=json.load(f)
+print(f"클래스 이름 로딩 완료:{class_names}")
+
+# 이미지 업로드 버튼 튀어 나옴
+from google.colab import files
+uploaded=files.upload()
+
+img_filename=list(uploaded.keys())[0]
+print(f"입력된 이미지:{img_filename}")
