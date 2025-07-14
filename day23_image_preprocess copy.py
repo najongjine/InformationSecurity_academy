@@ -63,6 +63,9 @@ def resize_pad_preprocess(image,label):
   image=preprocess_input(image)
   return image,label
 
+# class_names 저장
+class_list = train_ds.class_names
+
 # 파이프라인 구성. 데이터증강 + reszie 전처리 한방에 처리하기
 train_ds=train_ds.map(augment,num_parallel_calls=tf.data.AUTOTUNE)
 train_ds=train_ds.map(resize_pad_preprocess,num_parallel_calls=tf.data.AUTOTUNE)

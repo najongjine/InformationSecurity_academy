@@ -22,12 +22,12 @@ plt.show()
 import os
 import json
 
-save_dir='/content/drive/Mydrive/my_models/tensorflow_keras'
+save_dir='/content/drive/MyDrive/my_models/tensorflow_keras'
 save_model_path=os.path.join(save_dir,'EffiB0_test.h5')
 save_label_path=os.path.join(save_dir,'EffiB0_test.json')
 
 if not os.path.exists(save_dir):
-  os.makedirs(save_dir)
+  os.makedirs(save_dir, exist_ok=True)
   print(f"폴더 생성됨: {save_dir}")
 
 model.save(save_model_path)
