@@ -17,8 +17,8 @@ IMG_WIDTH = 224
 
 # 3️⃣ 저장된 모델 불러오기
 # 3️⃣ 저장된 모델 & 클래스 이름 불러오기
-model_path = '/content/drive/MyDrive/my_models/tensorflow_keras/EfficientNetB0.h5'
-label_path = '/content/drive/MyDrive/my_models/tensorflow_keras/EfficientNetB0.json'
+model_path = '/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.h5'
+label_path = '/content/drive/MyDrive/my_models/tensorflow_keras/EffiB0_test.json'
 model = load_model(model_path)
 print("✅ 모델 불러오기 성공!")
 
