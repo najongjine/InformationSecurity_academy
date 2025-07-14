@@ -82,3 +82,18 @@ EffiientNetB0 모델을 만든 박사님이 이미지 데이터가 numpy 기준�
 -1 ~ 1 로 자동으로 바꿔주는 함수를 만들어놔서, 그걸 갔다 쓴거에요
 """
 train_ds = train_ds.prefetch(tf.data.AUTOTUNE)
+
+
+"""
+지금까지의 흐름
+image_dataset_from_directory 라는 기계에 train_dir(훈련 이미지 경로) 를 넣었더니
+train_ds 라는 기계가 뿅 하고 만들어짐
+train_ds 라는 기게에 마법같은 함수를 넣었더니{ .map(augment,num_parallel_calls=tf.data.AUTOTUNE), 
+.map(resize_pad_preprocess,num_parallel_calls=tf.data.AUTOTUNE)}
+
+train_ds 업그레이드1단계 가 뿅 하고 나옴
+
+train_ds=train_ds.prefetch(tf.data.AUTOTUNE) 이것까지 했더니
+train_ds 업그레드 2단계 됨
+
+"""
