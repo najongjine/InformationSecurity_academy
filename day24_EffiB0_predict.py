@@ -2,7 +2,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 import numpy as np
-impoty matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import json
