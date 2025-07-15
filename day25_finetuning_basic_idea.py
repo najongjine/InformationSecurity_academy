@@ -166,3 +166,16 @@ GPT 사용 안좋은 예:
 GPT 사용 좋은 예:
 "나는 DenseNet 으로 질병 분류기를 나만의 데이터로 파인튜닝 하고싶어. 어떤 단계들이 필요할까?"
 """
+
+
+
+"""
+블랙박스 기법으로도 이해가 힘들면,
+그냥 재가 드린 cnn_efficientnetb0_train.py 이거 전체를 그냥 기계로 보세요
+다른 이미지 분류기로 개조해야 한다?
+
+1. from tensorflow.keras.applications import ...    <- 여기를 내가 쓰고싶은 모델로 고치기
+2. from tensorflow.keras.applications.... import ...   <- 여기를 내가 쓰고싶은 모델로 고치기
+3. base_dir =  ...     여기 고치기
+4. base_model = ... 여기 고치기
+"""
