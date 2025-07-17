@@ -9,3 +9,6 @@ from transformers import ViTForImageClassification, ViTFeatureExtractor, Trainin
 import torch
 from torch.utils.data import DataLoader
 from transformers import ViTForImageClassification, ViTFeatureExtractor
+
+from google.colab import drive
+drive.mount('/content/drive')
