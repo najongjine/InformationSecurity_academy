@@ -150,6 +150,16 @@ trainer = Trainer(
 trainer.train()
 
 # 저장
-model.save_pretrained("/content/drive/MyDrive/my_models/vit/vit_deit384_cornleaf")
-processor.save_pretrained("/content/drive/MyDrive/my_models/vit/vit_deit384_cornleaf")
+# 훈련하기 END
+
+
+# 폴더가 없으면 자동으로 만들기
+save_dir="/content/drive/MyDrive/my_models/vit/vit_deit384_cornleaf"
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+    print(f"📂 폴더 생성됨: {save_dir}")
+
+# 저장
+model.save_pretrained(save_dir)
+processor.save_pretrained(save_dir)
 # 훈련하기 END
