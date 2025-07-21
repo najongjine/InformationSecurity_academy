@@ -87,3 +87,27 @@ train_ds = CustomDataset(train_dataset, processor)
 val_ds = CustomDataset(val_dataset, processor)
 
 # 데이터를 모델이 원하는 타입으로 바꿔주기 END
+
+
+
+# 모델을 파인튜닝 모드로 변경하기
+id2label = {i: label for i, label in enumerate(train_dataset.classes)}
+label2id = {label: i for i, label in enumerate(train_dataset.classes)}
+
+checkpoint = "facebook/deit-base-distilled-patch16-384"
+model = ViTForImageClassification.from_pretrained(
+    checkpoint,
+    num_labels=len(train_dataset.classes),
+    id2label=id2label,
+    label2id=label2id
+)
+
+finetune_whole_model = False  # ← True면 앞부분까지 훈련, False면 출력층만
+
+if not finetune_whole_model:
+    for name, param in model.named_parameters():
+        if "classifier" in name:
+            param.requires_grad = True
+        else:
+            param.requires_grad = False
+# 모델을 파인튜닝 모드로 변경하기 END
