@@ -111,3 +111,45 @@ if not finetune_whole_model:
         else:
             param.requires_grad = False
 # 모델을 파인튜닝 모드로 변경하기 END
+
+
+# 훈련하기
+# 평가 지표
+def compute_metrics(p):
+    preds = np.argmax(p.predictions, axis=1)
+    labels = p.label_ids
+    acc = accuracy_score(labels, preds)
+    return {"accuracy": acc}
+
+# 훈련 인자
+training_args = TrainingArguments(
+    output_dir="./vit-cornleaf",
+    per_device_train_batch_size=BATCH_SIZE,
+    per_device_eval_batch_size=BATCH_SIZE,
+    num_train_epochs=EPOCHS,
+    eval_strategy="epoch",
+    save_strategy="epoch",
+    logging_dir="./logs",
+    logging_steps=10,
+    load_best_model_at_end=True,
+    metric_for_best_model="accuracy",
+    greater_is_better=True,
+    push_to_hub=False,
+    report_to="none"
+)
+
+# Trainer 구성
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_ds,
+    eval_dataset=val_ds,
+    compute_metrics=compute_metrics
+)
+
+trainer.train()
+
+# 저장
+model.save_pretrained("/content/drive/MyDrive/my_models/vit/vit_deit384_cornleaf")
+processor.save_pretrained("/content/drive/MyDrive/my_models/vit/vit_deit384_cornleaf")
+# 훈련하기 END
