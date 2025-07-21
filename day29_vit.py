@@ -164,39 +164,3 @@ model.save_pretrained(save_dir)
 processor.save_pretrained(save_dir)
 # 훈련하기 END
 
-
-# 그래프
-import matplotlib.pyplot as plt
-import pandas as pd
-
-# trainer.train() 실행 후
-train_output = trainer.train()
-
-# log_history에서 pandas DataFrame으로 변환
-logs = pd.DataFrame(trainer.state.log_history)
-
-# train/val loss와 accuracy만 필터링
-train_loss = logs[logs['loss'].notnull()][['epoch', 'loss']]
-eval_logs = logs[logs['eval_loss'].notnull()][['epoch', 'eval_loss', 'eval_accuracy']]
-
-# ✅ 손실(loss) 그래프
-plt.figure(figsize=(8, 5))
-plt.plot(train_loss['epoch'], train_loss['loss'], label='Train Loss')
-plt.plot(eval_logs['epoch'], eval_logs['eval_loss'], label='Validation Loss')
-plt.xlabel('Epoch')
-plt.ylabel('Loss')
-plt.title('Training and Validation Loss')
-plt.legend()
-plt.grid()
-plt.show()
-
-# ✅ 정확도(accuracy) 그래프
-plt.figure(figsize=(8, 5))
-plt.plot(eval_logs['epoch'], eval_logs['eval_accuracy'], marker='o', label='Validation Accuracy')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy')
-plt.title('Validation Accuracy')
-plt.legend()
-plt.grid()
-plt.show()
-# 그래프 END
