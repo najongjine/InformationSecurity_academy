@@ -1,3 +1,8 @@
+/**
+ * 초반은 파이썬으로 arcface 용 인물 크롤링
+ * 이후 타입스크립트 해봄
+ */
+
 function testfunc1(something: any) {
     console.log(`첫번째 함수 스타일`)
     console.log(`이미지 용량 줄이기 어쩌구 저쩌구..`)
