@@ -18,3 +18,9 @@ const testfunc2 = (imageBlob: Blob) => {
 
 let x: any;
 testfunc1(x)
+
+/**
+ 더하기를 수행하는 함수를 만들어 보세요.
+ 함수 이름은 add_test1
+ 매개변수는 2개 받기
+ */
