@@ -22,28 +22,64 @@ react19 typescript 에서는 src/App.tsx 이게 main 이에요
 3. 서버 재시작, 웹 재배포 이런거 자유로워요
  */
 
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
+    let normal_string = "시스템 문자열";
+    const [bind_string, setBindString] = useState<string>("바인딩 문자열");
+
     useEffect(() => { }, []);
 
+
     const testfunc1 = async () => {
-        console.log("작동 되네요");
+        normal_string = "바뀐 시스템 문자열";
+        setBindString("바뀐 바인딩 문자열");
+        alert(`bind_string : ${bind_string}`);
     }
+
     return (
         <>
         <h2 className= "justify-center" >
         홈 화면이에요!
             </h2>
             < p > 리액트와 타입스크립트를 배워봐요 🎉</p>
-                < br />
-                <button className="" onClick = { testfunc1 } >
-                    테스트
-                    </button>
-                    </>
+                < div > normal_string: { normal_string } </div>
+                    < div > bind_string: { bind_string } </div>
+                        < br />
+                        <button className="" onClick = { testfunc1 } >
+                            테스트
+                            </button>
+                            </>
   );
 };
 
 export default Home;
+
+
+
+/**
+ * 리엑트엔 2가지 타입의 변수가 있어요
+ * 
+ 1. 그냥 변수 -
+ let normal_string = "시스템 문자열";
+ 얘는 화면 바인딩이 안되요
+
+ 2. 화면 바인딩 변수-
+ const [bind_string, setBindString] = useState<string>("바인딩 문자열");
+ 얘는 값이 바뀌면 화면 값이 바뀌어요
+
+ 화면 바인딩 변수의 값을 바꾸려면 set... 함수를 써줘야 해요.
+ set... 함수는 비동기에요
+
+ 요즘 프레임워크는 비동기에요
+ 빠른코드와 느린코드로 나뉘어요
+
+ 바른코드는 10억줄이 있어도 빨라요
+ 느린코드는 언제 끝날지 몰라요
+
+ 느린코드()
+ 빠른코드()
+
+ 이렇게 있으면 무조건 빠른코드 먼저 실행하고, 그다음에 느린코드는 제각각 실행요
+ */
