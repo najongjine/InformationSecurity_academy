@@ -21,3 +21,29 @@ react19 typescript 에서는 src/App.tsx 이게 main 이에요
 2. 여러가지 클라이언트를 서버가 수용할수 있어요
 3. 서버 재시작, 웹 재배포 이런거 자유로워요
  */
+
+
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const Home: React.FC = () => {
+    useEffect(() => { }, []);
+
+    const testfunc1 = async () => {
+        console.log("작동 되네요");
+    }
+    return (
+        <>
+        <h2 className= "justify-center" >
+        홈 화면이에요!
+            </h2>
+            < p > 리액트와 타입스크립트를 배워봐요 🎉</p>
+                < br />
+                <button className="" onClick = { testfunc1 } >
+                    테스트
+                    </button>
+                    </>
+  );
+};
+
+export default Home;
