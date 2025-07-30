@@ -12,6 +12,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, Session
 from fastapi.responses import JSONResponse
 from fastapi.responses import ORJSONResponse
+from fastapi import Request
 
 
 # ✅ DB 접속 정보
@@ -38,6 +39,20 @@ def read_raw_query(db: Session = Depends(get_db)):
     result = db.execute(text("SELECT * FROM t_test1"))
     rows = result.mappings().all()
     return [dict(row) for row in rows]  # ✅ orjson이 datetime도 자동 처리
+
+# ✅ INSERT 라우터
+@app.post("/raw-insert2")
+async def insert_raw_alt(req: Request, db: Session = Depends(get_db)):
+    body = await req.json()  # 👈 Hono 스타일
+    print(body)  # dict로 나옴: {"name": "홍길동", "age": 25, ...}
+
+    query = text("""
+        INSERT INTO t_test1 (name, age, created_at)
+        VALUES (:name, :age, :created_at)
+    """)
+    db.execute(query, body)  # ✅ 바로 dict로 넘김
+    db.commit()
+    return {"message": "Insert successful"}
 
 # ✅ 실행
 if __name__ == "__main__":
