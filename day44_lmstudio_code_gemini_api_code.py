@@ -45,4 +45,35 @@ LLM 파인튜닝 -
 
 """
 https://colab.research.google.com/drive/1gSK_TtWOnu8INomqqsuMQZNzzYCszvAO?usp=sharing
+- PEFT 예제 코드
+
+결과는 참담하게 실패.
+
+1. 모델의 한계. 기본 모델이 안좋으면, 학습도 개판이됨
+2. 좋은 모델을 돌릴려면 결국 GPU가 받쳐주고, colab이 아닌곳에서 실행 해야함
+
+실무에서는 unsloth 라는놈을 이용해서 파인튜닝을 한대요
+"""
+
+"""
+-- 1. 카테고리 테이블 생성
+CREATE TABLE t_category (
+    id SERIAL PRIMARY KEY,             -- 카테고리 ID (자동 증가)
+    category_name VARCHAR(100) NOT NULL -- 카테고리 이름
+);
+
+-- 2. 상품 테이블 생성
+CREATE TABLE t_product (
+    id SERIAL PRIMARY KEY,             -- 상품 ID (자동 증가)
+    product_name VARCHAR(200) NOT NULL, -- 상품 이름
+    category_id INT NOT NULL,           -- 카테고리 ID (FK)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 생성일
+    description TEXT,                   -- 상품 설명
+    CONSTRAINT fk_category
+        FOREIGN KEY (category_id)
+        REFERENCES t_category (id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
 """
