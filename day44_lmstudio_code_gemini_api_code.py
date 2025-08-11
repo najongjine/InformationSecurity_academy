@@ -76,4 +76,5 @@ CREATE TABLE t_product (
         ON DELETE RESTRICT
 );
 
+https://colab.research.google.com/drive/1CwGNcVS3gAzHZ_vmdbOa64SQ6TKdOMc1?usp=sharing
 """
