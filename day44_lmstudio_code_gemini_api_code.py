@@ -77,4 +77,8 @@ CREATE TABLE t_product (
 );
 
 https://colab.research.google.com/drive/1CwGNcVS3gAzHZ_vmdbOa64SQ6TKdOMc1?usp=sharing
+
+- documents = 문자열
+- embedding_model = 문자를 숫자로 바꿔주는 놈
+- vector_db = 숫자들을 저장한놈
 """
