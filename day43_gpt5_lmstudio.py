@@ -98,6 +98,10 @@ LLM 자체 = 기억 없음. 오직 현재 입력(프롬프트)만 봄.
 """
 UV 환경셋팅으로 새로운 프로젝트 만들기 예시:
 
+pip install uv
+
+uv init myproject
+
 uv python install 3.10
 uv python pin 3.10
 uv venv --python 3.10
