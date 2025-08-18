@@ -14,4 +14,8 @@ https://universe.roboflow.com/ds/SFctUXTZuN?key=QycknQW80l
 
 https://universe.roboflow.com/usthb-n5ajt/plants-disease-2599r/model/1
 - plant disease
+
+https://github.com/najongjine/yolo_ultralystic
+- 병충해 모델 파인튜닝한 주소
+- 실제 GPU 컴퓨터에서 파인튜닝 하는 코드도 포함되 있음
 """
