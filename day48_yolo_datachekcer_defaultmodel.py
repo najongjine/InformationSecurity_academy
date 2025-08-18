@@ -11,4 +11,7 @@ yolo 기본 모델은, 차 사람 이정도밖에 판별을 못해요.
 
 https://universe.roboflow.com/ds/SFctUXTZuN?key=QycknQW80l
 - insect dataset
+
+https://universe.roboflow.com/usthb-n5ajt/plants-disease-2599r/model/1
+- plant disease
 """
