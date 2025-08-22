@@ -178,3 +178,70 @@ export default function RoboflowUploader() {
 }
 
 """
+
+"""
+// 예측 결과 타입
+interface Prediction {
+  class: string;
+  class_id: number;
+  confidence: number;
+  detection_id: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+
+//2. React에서 상태로 받기
+import React, { useState } from "react";
+
+export default function PredictionViewer() {
+  const [predictions, setPredictions] = useState<Prediction[]>([]);
+
+  // API 응답 예시
+  const apiResponse = {
+    predictions: [
+      {
+        class: "Tomato Septoria leaf spot",
+        class_id: 19,
+        confidence: 0.7049074172973633,
+        detection_id: "00edfd46-fca6-45a0-acf9-0fecfb2b638d",
+        x: 278.5,
+        y: 61,
+        width: 395,
+        height: 122,
+      },
+      {
+        class: "Other Class",
+        class_id: 20,
+        confidence: 0.8123,
+        detection_id: "abc123",
+        x: 646.5,
+        y: 451.5,
+        width: 1211,
+        height: 500,
+      },
+    ],
+  };
+
+  const handleLoad = () => {
+    setPredictions(apiResponse.predictions);
+  };
+
+  return (
+    <div>
+      <button onClick={handleLoad}>Load Predictions</button>
+
+      <ul>
+        {predictions.map((p) => (
+          <li key={p.detection_id}>
+            {p.class} ({(p.confidence * 100).toFixed(1)}%)
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+"""
