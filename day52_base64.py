@@ -59,24 +59,6 @@ export default function RoboflowUploader() {
     }
   };
 
-  // File -> base64 순수 페이로드 (dataURL prefix 제거)
-    async function fileToBase64Payload(file: File): Promise<string> {
-    // 파일을 ArrayBuffer(이진 데이터)로 읽기
-    const buffer = await file.arrayBuffer();
-
-    // Uint8Array -> 문자열 변환
-    let binary = "";
-    const bytes = new Uint8Array(buffer);
-    const chunkSize = 0x8000; // 성능을 위한 청크 단위
-    for (let i = 0; i < bytes.length; i += chunkSize) {
-        const chunk = bytes.subarray(i, i + chunkSize);
-        binary += String.fromCharCode.apply(null, chunk as any);
-    }
-
-    // base64 인코딩
-    return btoa(binary);
-    }
-
   const sendToRoboflow = async () => {
     if (!file) return;
     setLoading(true);
