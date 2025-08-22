@@ -47,37 +47,35 @@ const API_KEY = "YOUR_API_KEY";    // <- 테스트용으로만 사용 (실서비
 
 export default function RoboflowUploader() {
   const [file, setFile] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string>("");
-  const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<RoboflowResponse | null>(null);
-  const [error, setError] = useState<string>("");
 
   const onPick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0] || null;
     setFile(f ?? null);
     setResult(null);
-    setError("");
     if (f) {
       const url = URL.createObjectURL(f);
-      setPreview(url);
     } else {
-      setPreview("");
     }
   };
 
   // File -> base64 순수 페이로드 (dataURL prefix 제거)
-  const fileToBase64Payload = (f: File) =>
-    new Promise<string>((resolve, reject) => {
-      const fr = new FileReader();
-      fr.onload = () => {
-        const dataUrl = String(fr.result ?? "");
-        // "data:image/jpeg;base64,...." 같은 접두사 제거
-        const base64 = dataUrl.includes(",") ? dataUrl.split(",")[1] : dataUrl;
-        resolve(base64);
-      };
-      fr.onerror = reject;
-      fr.readAsDataURL(f);
-    });
+    async function fileToBase64Payload(file: File): Promise<string> {
+    // 파일을 ArrayBuffer(이진 데이터)로 읽기
+    const buffer = await file.arrayBuffer();
+
+    // Uint8Array -> 문자열 변환
+    let binary = "";
+    const bytes = new Uint8Array(buffer);
+    const chunkSize = 0x8000; // 성능을 위한 청크 단위
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+        const chunk = bytes.subarray(i, i + chunkSize);
+        binary += String.fromCharCode.apply(null, chunk as any);
+    }
+
+    // base64 인코딩
+    return btoa(binary);
+    }
 
   const sendToRoboflow = async () => {
     if (!file) return;
