@@ -10,7 +10,8 @@ CREATE TABLE t_plants (
   soil TEXT DEFAULT '',                                      -- 토양 (예: 배수성 좋은 피트 + 펄라이트)
   fertilizer TEXT DEFAULT '',                                -- 비료 (예: 4주 간격 액체비료)
   repotting TEXT DEFAULT '',                                 -- 분갈이 (예: 2년에 1회, 봄)
-
+  img_url VARCHAR DEFAULT '', 
+  
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
