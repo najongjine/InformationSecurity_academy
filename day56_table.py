@@ -129,4 +129,26 @@ VALUES
  '1~2년에 1회',
  'https://images.unsplash.com/photo-1611771346749-89db6ef62e87');
 
+ 
+
+
+
+export type Plant = {
+  id: number;
+  name: string;
+
+  sunlight: string;
+  watering: string;
+  temperature: string;
+  humidity: string;
+  soil: string;
+  fertilizer: string;
+  repotting: string;
+
+  created_at: string;     // ISO timestamp (ex: "2025-08-28T12:34:56.000Z")
+  updated_at: string;
+  img_url: string;
+};
+
+
 """
