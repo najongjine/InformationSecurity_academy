@@ -1,5 +1,5 @@
 """
-CREATE TABLE plants (
+CREATE TABLE t_plants (
   id SERIAL PRIMARY KEY,                          -- 고유 식별자
   name VARCHAR(100) NOT NULL,                     -- 식물 이름 (예: 몬스테라)
 
