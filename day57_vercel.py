@@ -1,4 +1,8 @@
 """
+vercel 예시:
+https://plant-react-academy.vercel.app
+
+
 nodejs Hono vercel 에 올리기-
 
 hono 프로젝트 root 경로에 
