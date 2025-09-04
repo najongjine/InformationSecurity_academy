@@ -7,29 +7,33 @@ if '%errorlevel%' NEQ '0' (
     exit /b
 )
 
-:: 임시 PowerShell 스크립트 생성
+:: 임시 PowerShell 스크립트 경로 설정
 set psfile=%TEMP%\wipe_personal_data.ps1
 
+:: PowerShell 스크립트 생성
 > "%psfile%" (
-echo param()
-echo function nuke($p^) { if(Test-Path $p^) { Remove-Item $p -Recurse -Force -ErrorAction SilentlyContinue } }
-echo Write-Host "Wiping Chrome, Edge, Brave, Firefox user data..."
-echo nuke "$env:LOCALAPPDATA\Google\Chrome\User Data"
-echo nuke "$env:LOCALAPPDATA\Microsoft\Edge\User Data"
-echo nuke "$env:LOCALAPPDATA\BraveSoftware\Brave-Browser\User Data"
-echo nuke "$env:APPDATA\Mozilla\Firefox"
-echo nuke "$env:LOCALAPPDATA\Mozilla\Firefox"
-echo Write-Host "Wiping GitHub CLI tokens..."
-echo nuke "$env:APPDATA\GitHub CLI"
-echo Write-Host "Removing credentials from Windows Credential Manager..."
-echo $list = cmdkey /list ^| Select-String "Target:" ^| ForEach-Object { ($_ -replace '^\s*Target:\s*','').Trim() }
-echo foreach ($t in $list^) { cmdkey /delete:$t ^| Out-Null }
-echo Write-Host "Done. All personal data wiped."
+echo Write-Host "[*] Wiping Chrome, Edge, Brave, Firefox user data..."
+echo Remove-Item "$env:LOCALAPPDATA\Google\Chrome\User Data" -Recurse -Force -ErrorAction SilentlyContinue
+echo Remove-Item "$env:LOCALAPPDATA\Microsoft\Edge\User Data" -Recurse -Force -ErrorAction SilentlyContinue
+echo Remove-Item "$env:LOCALAPPDATA\BraveSoftware\Brave-Browser\User Data" -Recurse -Force -ErrorAction SilentlyContinue
+echo Remove-Item "$env:APPDATA\Mozilla\Firefox" -Recurse -Force -ErrorAction SilentlyContinue
+echo Remove-Item "$env:LOCALAPPDATA\Mozilla\Firefox" -Recurse -Force -ErrorAction SilentlyContinue
+
+echo Write-Host "[*] Wiping GitHub CLI tokens..."
+echo Remove-Item "$env:APPDATA\GitHub CLI" -Recurse -Force -ErrorAction SilentlyContinue
+
+echo Write-Host "[*] Removing credentials from Windows Credential Manager..."
+echo $targets = cmd /c "cmdkey /list" ^| Where-Object {$_ -match '^ *Target:' } ^| ForEach-Object { ($_ -replace '^ *Target:','').Trim() }
+echo foreach ($t in $targets) {
+echo     cmd /c "cmdkey /delete:`"$t`"" ^> $null
+echo }
+
+echo Write-Host "[OK] All personal data wiped."
 )
 
 :: PowerShell로 실행
 powershell -NoProfile -ExecutionPolicy Bypass -File "%psfile%"
 
-:: 정리
+:: 임시 파일 삭제
 del "%psfile%" >nul 2>&1
 pause
