@@ -1,0 +1,41 @@
+del_personal_info.bat 관리자 권한으로 실행
+
+✅ 1. Windows 자격 증명 관리자 확인 (Credential Manager)
+
+Win 키 → 제어판 → 자격 증명 관리자(Credential Manager) 클릭
+또는 제어판 > 사용자 계정 > 자격 증명 관리자
+
+Windows 자격 증명 탭과 일반 자격 증명(Generic Credentials) 탭 확인
+
+아래 항목들이 없어졌다면 성공적으로 삭제된 것:
+
+git:https://github.com
+
+git:https://your-company-git.com
+
+github.com
+
+MicrosoftAccount:target=git:…
+
+VS Code GitHub 로그인 관련 항목
+
+❗ 있으면 삭제 안 된 거니까 수동으로 제거 가능
+→ 항목 우측 [제거] 클릭
+
+
+
+✅ 2. GitHub CLI 토큰 삭제 확인
+gh auth status
+
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+
+✅ 4. VS Code GitHub 로그인 제거 (선택사항)
+
+VS Code 열기
+
+Ctrl + Shift + P → Sign Out
+
+"GitHub" 혹은 "Microsoft 계정"이 남아 있으면 로그아웃
